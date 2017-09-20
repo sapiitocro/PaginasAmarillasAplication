@@ -60,13 +60,15 @@
                         android:textStyle="bold"
                         android:textSize="25sp"/>
 
-                    <EditText
+                    <AutoCompleteTextView
+                        android:id="@+id/autoComplete"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:hint="Escriba aqui ..."
                         android:layout_marginTop="5sp"
                         android:layout_marginLeft="15sp"
-                        android:layout_marginRight="15sp"
-                        android:hint="Escriba aqui ..."/>
+                        android:layout_marginRight="15sp"/>
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
