@@ -8,32 +8,40 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.tecsup.paginasamarillasapp.Adaptador.Adaptador;
+import com.tecsup.paginasamarillasapp.Datos.Datos;
 import com.tecsup.paginasamarillasapp.Detalles.Detalles;
 import com.tecsup.paginasamarillasapp.R;
 
+import java.util.ArrayList;
+
 public class Resultados extends AppCompatActivity {
 
-    ListView list;
-
-    String [] restaurants = {"PICCOLO" , "ROKY'S" , "KFC" , "NORKY'S" , "PIZZA HUT" , "PEPER'S" , "BEMBOS" , "EL TABLÓN" , "CEVICHERIA" , "CHIFA"};
+    private ListView listaPersonalizada = null;
+    private ArrayList<Datos> arrayItem = null;
+    private Adaptador adapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultados);
 
-        list = (ListView) findViewById(R.id.list);
-        ArrayAdapter <String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,restaurants);
-        list.setAdapter(adapter);
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        listaPersonalizada = (ListView) findViewById(R.id.list);
+        arrayItem = new ArrayList<>();
 
-                Intent intent = new Intent(Resultados.this, Detalles.class);
-                startActivity(intent);
-
-            }
-        });
+        cargarLista();
 
     }
+
+    public void cargarLista(){
+
+        arrayItem.add(new Datos("POLLERIA ROKY´S","av. Lima # 123","7630057",R.mipmap.logo_pollo));
+        arrayItem.add(new Datos("HAMBURGUESAS","av. Pirata # 6074","7502598",R.mipmap.logo_hamburguesa));
+
+
+        adapter = new Adaptador(this, arrayItem);
+        listaPersonalizada.setAdapter(adapter);
+
+    }
+
 }
