@@ -61,6 +61,19 @@ public class Resultados extends AppCompatActivity {
         adapter = new Adaptador(this, arrayItem);
         listaPersonalizada.setAdapter(adapter);
 
+        listaPersonalizada.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                String posicion = String.valueOf(i);
+
+                Intent iii = new Intent(Resultados.this, Detalles.class);
+                iii.putExtra("cartilla",posicion );
+                startActivity(iii);
+
+            }
+        });
+
     }
 
 }
