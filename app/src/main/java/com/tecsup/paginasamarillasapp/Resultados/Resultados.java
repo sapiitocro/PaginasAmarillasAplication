@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.tecsup.paginasamarillasapp.Adaptador.Adaptador;
 import com.tecsup.paginasamarillasapp.Datos.Datos;
@@ -20,6 +21,7 @@ public class Resultados extends AppCompatActivity {
     private ListView listaPersonalizada = null;
     private ArrayList<Datos> arrayItem = null;
     private Adaptador adapter = null;
+    private TextView barra;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +31,24 @@ public class Resultados extends AppCompatActivity {
         listaPersonalizada = (ListView) findViewById(R.id.list);
         arrayItem = new ArrayList<>();
 
-        cargarLista();
+        Bundle b = getIntent().getExtras();
+        String dato=b.getString("data");
+        barra = (TextView) findViewById(R.id.barraText);
+
+        if(dato.equalsIgnoreCase("Restaurants") || dato.equalsIgnoreCase("Restaurantes") ||
+                dato.equalsIgnoreCase("Restaurant") || dato.equalsIgnoreCase("Restaurante")){
+
+            barra.setText("Estos son los resultados de "+dato);
+            cargarLista();
+
+        }else {
+
+            barra.setText("0 resultados de "+dato);
+        }
+
+
+
+
 
     }
 
