@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item
+        android:id="@+id/action_navegar"
+        android:enabled="true"
+        android:icon="@mipmap/icon_navegador"
+        android:title="WebSite"
+        android:showAsAction="ifRoom"
+
+        />
+
+    <item
+        android:id="@+id/action_enviarCorreo"
+        android:enabled="true"
+        android:icon="@mipmap/icon_correo"
+        android:title="E-Mail"
+        android:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/action_enviarMensaje"
+        android:enabled="true"
+        android:icon="@mipmap/icon_mensaje"
+        android:title="SMS"
+        android:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/action_compartir"
+        android:enabled="true"
+        android:icon="@mipmap/icon_compartir"
+        android:title="Compartir"
+        android:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/action_llamar"
+        android:enabled="true"
+        android:icon="@mipmap/icon_telefono2"
+        android:title="Teléfono"
+        android:showAsAction="ifRoom"
+        />
+
+</menu>
